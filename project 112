@@ -1,0 +1,21 @@
+import os
+import shutil
+source="C:/Users/Administrator/Desktop"
+destination="C:/Users/Administrator/Downloads"
+list=os.listdir(source)
+for i in list:
+    name,extension=os.path.splitext(i)
+    print(name,extension)
+    if extension=='':
+        continue
+    if extension in ['.txt', '.doc', '.docx', '.pdf']:
+        path1=source + from_dir + "/" + file_name
+        path2=destination + to_dir + "/" + 'Document_files'
+        path3=destination + to_dir + "/" + 'Document_files' + "/" + file_name
+        if os.path.exists(path2):
+            print("moving" + file_name + ".....")
+            shutil.move(path1,path3)
+        else:
+            os.makedirs(path2)
+            print("moving" + file_name + ".....")
+            shutil.move(path1,path3)
